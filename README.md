@@ -29,6 +29,7 @@ A visual representation of the request lifecycle, highlighting automated tenant 
 
 The Flow:
 
+---
 ```mermaid
 graph TD
     %% Management Hierarchy at the Top (Left-to-Right)
@@ -66,6 +67,7 @@ graph TD
         DB --> Audit[Immutable Audit Logs]
     end
 ```
+---
 
 ### Multi-Tenancy Engine
 
