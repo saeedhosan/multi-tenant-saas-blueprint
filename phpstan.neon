@@ -1,0 +1,33 @@
+includes:
+    - vendor/larastan/larastan/extension.neon
+    - vendor/nesbot/carbon/extension.neon
+    - phar://phpstan.phar/conf/bleedingEdge.neon
+
+parameters:
+    reportUnmatchedIgnoredErrors: false
+    paths:
+        - public/index.php
+        - bootstrap/app.php
+        - config
+        - database
+        - routes
+        - app
+
+    excludePaths:
+        analyse: # exclude dirs from analysis
+
+        analyseAndScan: # exclude dirs from both analysis and scan
+            ## Ignore especific
+            - app/Models/AppLog.php
+
+            # Services classes
+            - app/Services/UAgent.php
+    level: max
+
+    tmpDir: /tmp/phpstan
+
+    ignoreErrors:
+        - '#PHPDoc tag @var#'
+        - '#Cannot cast mixed to int#'
+        - '#Cannot cast mixed to string#'
+        - '#Cannot cast mixed to float#'
